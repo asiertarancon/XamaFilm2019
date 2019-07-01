@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EjConverters.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:local="clr-namespace:EjConverters"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:SemaphoreConverter x:Key="SemaphoreConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+
+        <BoxView BackgroundColor="{Binding SemaphoreValue, Converter={StaticResource SemaphoreConverter}}" HeightRequest="250" />
+
+        <Button Clicked="Button_Clicked" Text="Cambia!" />
+
+    </StackLayout>
+
+
+</ContentPage>
