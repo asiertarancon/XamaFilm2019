@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ListView"
+             xmlns:viewModel="clr-namespace:ListView.ViewModel"
+             x:Class="ListView.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewModel:MainViewModel/>
+    </ContentPage.BindingContext>
+    
+    <!--<StackLayout>-->
+        <ListView x:Name="ListView" HasUnevenRows="True" SeparatorVisibility="Default" SeparatorColor="Green" ItemsSource="{Binding ListaEventos}">
+            <ListView.Header>
+                <Label Text="Título de la lista" BackgroundColor="Blue" TextColor="White" FontSize="Large"/>
+            </ListView.Header>
+            <ListView.Footer>
+                <StackLayout Orientation="Horizontal">
+                    <BoxView BackgroundColor="Red" WidthRequest="20" HeightRequest="20"/>
+                    <Label Text="FOOTER"/>
+                </StackLayout>                
+            </ListView.Footer>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <!--<TextCell Text="{Binding Name}" Detail="{Binding Location}"/>-->
+                <ViewCell>
+                    <Grid Margin="10,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}"/>
+                        <Label Grid.Row="1" Grid.Column="0" Text="{Binding Location}"/>
+                        <Label Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Text="{Binding Date}" VerticalTextAlignment="Center"/>
+
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    <!--</StackLayout>-->
+
+</ContentPage>
