@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Views.EventPage">
+    <ScrollView>
+        <StackLayout Margin="15">
+            <Label Text="EVENT" FontSize="16" HorizontalOptions="Center"/>
+            <Image Source="logo.png"/>
+            <Label Text="Title" FontAttributes="Bold"/>
+            <Label Text="Keep Calm and test your code"/>
+            <Label Text="Description" FontAttributes="Bold"/>
+            <Label Text="Basado en la pirámide de test de Mike Cohn se hará un repaso por sus distintos niveles y se profundizará en cada uno de ellos explicando sus diferencias. Además, se verán diferentes situaciones dentro de cada nivel y como deberían ser testeadas de forma segura. "/>
+            <Label Text="Date" FontAttributes="Bold"/>
+            <DatePicker />
+            <Label Text="Time" FontAttributes="Bold"/>
+            <TimePicker/>
+            <Label Text="Duration (minutes)" FontAttributes="Bold"/>
+            <Picker>
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>30</x:String>
+                        <x:String>45</x:String>
+                        <x:String>60</x:String>
+                        <x:String>90</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Label Text="Seats" FontAttributes="Bold"/>
+            <Grid>
+                <Label x:Name="SeatsStepper" Text="30" VerticalOptions="Center"/>
+                <Stepper x:Name="Stepper" Minimum="0" Maximum="50" Value="30" HorizontalOptions="End" ValueChanged="Stepper_ValueChanged"/>
+            </Grid>
+            
+            <Label Text="Opciones adicionales" FontAttributes="Bold"/>
+            <Grid >
+                <Label Text="Hacerle una pregunta a los miembros" HorizontalOptions="Start"/>
+                <Switch HorizontalOptions="End"/>
+            </Grid>
+            <Grid >
+                <Label Text="Indicar el precio" HorizontalOptions="Start"/>
+                <Switch HorizontalOptions="End"/>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Views"
+             x:Class="Views.LoginPage">
+    <Grid BackgroundColor="White" Padding="30" >
+        <StackLayout >
+            <Image Source="https://pbs.twimg.com/profile_images/946309631189700609/q9n2f_Qu_400x400.jpg" WidthRequest="100" HeightRequest="100" HorizontalOptions="Center"/>
+            <Label Text="Username"/>
+            <Entry Placeholder="Enter username"/>
+            <Label Text="Password"/>
+            <Entry Placeholder="Enter password"/>
+
+            <Button Text="Login" Clicked="Button_Clicked"/>
+            
+        </StackLayout>
+        
+        <ActivityIndicator x:Name="ActivityIndicator" WidthRequest="100" HeightRequest="100" IsRunning="False" IsVisible="False"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Layouts.GridPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Grid
+        BackgroundColor="Aqua"
+        ColumnSpacing="5"
+        RowSpacing="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <BoxView
+            Grid.Row="0"
+            Grid.Column="0"
+            BackgroundColor="Green"
+            HeightRequest="100"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="100" />
+        <BoxView
+            Grid.Row="0"
+            Grid.Column="1"
+            BackgroundColor="Yellow"
+            HeightRequest="100"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="100" />
+
+        <BoxView
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            BackgroundColor="Blue"
+            HeightRequest="100"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Center" />
+
+        <BoxView
+            Grid.Row="2"
+            Grid.Column="0"
+            BackgroundColor="Red"
+            HeightRequest="100"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="100" />
+        <BoxView
+            Grid.Row="2"
+            Grid.Column="1"
+            BackgroundColor="Pink"
+            HeightRequest="100"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="100" />
+
+    </Grid>
+</ContentPage>
+
