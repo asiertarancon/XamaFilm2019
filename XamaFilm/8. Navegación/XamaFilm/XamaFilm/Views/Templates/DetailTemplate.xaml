@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="XamaFilm.Views.Templates.DetailTemplate"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout
+                x:Name="ImageStackLayout"
+                Padding="5"
+                BackgroundColor="LightGray">
+                <Image
+                    x:Name="Image"
+                    HorizontalOptions="FillAndExpand"
+                    Source="{Binding Item.Poster}" />
+
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding Item.Rated}" />
+                            <Span Text=" * " />
+                            <Span Text="{Binding Item.Released}" />
+                            <Span Text=" * " />
+                            <Span Text="{Binding Item.Runtime}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Text="{Binding Item.Title}" />
+                <Label Text="{Binding Item.Genre}" />
+            </StackLayout>
+
+            <Label
+                x:Name="PlotLabel"
+                Margin="5"
+                LineBreakMode="WordWrap"
+                Text="{Binding Item.Plot}" />
+
+            <StackLayout
+                x:Name="FactsStackLayout"
+                Padding="5"
+                BackgroundColor="Gray">
+                <Label Margin="0,5" Text="Facts" />
+
+                <Label Text="Director" />
+                <Label x:Name="DirectorLabel" Text="{Binding Item.Director}" />
+
+                <Label Text="Writer" />
+                <Label x:Name="WriterLabel" Text="{Binding Item.Writer}" />
+
+                <Label Text="Actors" />
+                <Label x:Name="ActorsLabel" Text="{Binding Item.Actors}" />
+
+                <Label Text="Language" />
+                <Label x:Name="LanguageLabel" Text="{Binding Item.Language}" />
+
+                <Label Text="Country" />
+                <Label x:Name="CountryLabel" Text="{Binding Item.Country}" />
+
+                <Label Text="Awards" />
+                <Label x:Name="AwardsLabel" Text="{Binding Item.Awards}" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentView>

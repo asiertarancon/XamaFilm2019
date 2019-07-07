@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamaFilm.Views.DetailMovieView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout
+                x:Name="ImageStackLayout"
+                Padding="5"
+                BackgroundColor="LightGray"
+                Opacity="0.1">
+                <Image
+                    x:Name="Image"
+                    HorizontalOptions="FillAndExpand"
+                    Source="https://pics.filmaffinity.com/the_dark_knight-102763119-mmed.jpg" />
+
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Rated" />
+                            <Span Text=" * " />
+                            <Span Text="Released" />
+                            <Span Text=" * " />
+                            <Span Text="Runtime" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label x:Name="TitleLabel" Text="El caballero oscuro" />
+                <Label x:Name="GenreLabel" Text="Thriller. Acción. Drama" />
+            </StackLayout>
+
+            <Label
+                x:Name="PlotLabel"
+                Margin="5"
+                LineBreakMode="WordWrap"
+                Text="Plot" />
+
+            <StackLayout
+                x:Name="FactsStackLayout"
+                Padding="5"
+                BackgroundColor="Gray">
+                <Label Margin="0,5" Text="Facts" />
+
+                <Label Text="Director" />
+                <Label x:Name="DirectorLabel" Text="Christopher Nolan" />
+
+                <Label Text="Writer" />
+                <Label x:Name="WriterLabel" Text="Christopher Nolan, David S. Goyer," />
+
+                <Label Text="Actors" />
+                <Label x:Name="ActorsLabel" Text="Christian Bale,  Heath Ledger,  Aaron Eckhart,  Michael Caine" />
+
+                <Label Text="Language" />
+                <Label x:Name="LanguageLabel" Text="Inglés, Español" />
+
+                <Label Text="Country" />
+                <Label x:Name="CountryLabel" Text="EE.UU." />
+
+                <Label Text="Awards" />
+                <Label x:Name="AwardsLabel" Text="2008: 2 Oscar: Mejor actor sec" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
