@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamaFilm.Views.SettingsView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <TableView>
+        <TableRoot>
+            <TableSection Title="Settings">
+                <SwitchCell Text="Include Adult Content" />
+            </TableSection>
+
+            <TableSection Title="About">
+                <TextCell Command="{Binding NavigateToAcknowledgmentCommand}" Text="Acknowledgment" />
+                <TextCell Command="{Binding NavigateToAboutUsCommand}" Text="About us" />
+                <TextCell Command="{Binding NavigateToPrivacyCommand}" Text="Privacy" />
+
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>

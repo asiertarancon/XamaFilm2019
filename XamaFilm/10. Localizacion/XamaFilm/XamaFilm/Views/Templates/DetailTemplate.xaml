@@ -4,11 +4,15 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:i18n="clr-namespace:XamaFilm.Strings"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ScrollView>
         <StackLayout>
-            <StackLayout Padding="5" BackgroundColor="{Binding Item.ImdbRating, Converter={StaticResource RatingToColorConverter}}">
+            <StackLayout
+                x:Name="ImageStackLayout"
+                Padding="5"
+                BackgroundColor="{Binding Item.ImdbRating, Converter={StaticResource RatingToColorConverter}}">
                 <Image HorizontalOptions="FillAndExpand" Source="{Binding Item.Poster}" />
 
                 <Label Style="{StaticResource SubTitleGrayLabelStyle}">
@@ -27,35 +31,39 @@
             </StackLayout>
 
             <Label
+                x:Name="PlotLabel"
                 Margin="5"
                 LineBreakMode="WordWrap"
                 Text="{Binding Item.Plot}" />
 
-            <StackLayout Padding="5" BackgroundColor="{StaticResource LightGrayColor}">
+            <StackLayout
+                x:Name="FactsStackLayout"
+                Padding="5"
+                BackgroundColor="{StaticResource LightGrayColor}">
                 <Label
                     Margin="0,5"
                     Style="{StaticResource TitleDarkGrayLabelStyle}"
-                    Text="Facts" />
+                    Text="{i18n:Translate Facts}" />
 
-                <Label Style="{StaticResource SubTitleBlackLabelStyle}" Text="Original Title" />
+                <Label Style="{StaticResource SubTitleBlackLabelStyle}" Text="{i18n:Translate Title}" />
                 <Label Text="{Binding Item.Title}" />
 
-                <Label Style="{StaticResource SubTitleBlackLabelStyle}" Text="Director" />
+                <Label Style="{StaticResource SubTitleBlackLabelStyle}" Text="{i18n:Translate Director}" />
                 <Label Text="{Binding Item.Director}" />
 
-                <Label Style="{StaticResource SubTitleBlackLabelStyle}" Text="Writer" />
+                <Label Style="{StaticResource SubTitleBlackLabelStyle}" Text="{i18n:Translate Writer}" />
                 <Label Text="{Binding Item.Writer}" />
 
-                <Label Style="{StaticResource SubTitleBlackLabelStyle}" Text="Actors" />
+                <Label Style="{StaticResource SubTitleBlackLabelStyle}" Text="{i18n:Translate Actors}" />
                 <Label Text="{Binding Item.Actors}" />
 
-                <Label Style="{StaticResource SubTitleBlackLabelStyle}" Text="Language" />
+                <Label Style="{StaticResource SubTitleBlackLabelStyle}" Text="{i18n:Translate Language}" />
                 <Label Text="{Binding Item.Language}" />
 
-                <Label Style="{StaticResource SubTitleBlackLabelStyle}" Text="Country" />
+                <Label Style="{StaticResource SubTitleBlackLabelStyle}" Text="{i18n:Translate Country}" />
                 <Label Text="{Binding Item.Country}" />
 
-                <Label Style="{StaticResource SubTitleBlackLabelStyle}" Text="Awards" />
+                <Label Style="{StaticResource SubTitleBlackLabelStyle}" Text="{i18n:Translate Awards}" />
                 <Label Text="{Binding Item.Awards}" />
 
                 <StackLayout BindableLayout.ItemsSource="{Binding Item.Ratings}" Orientation="Horizontal">

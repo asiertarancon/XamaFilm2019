@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentView
-    x:Class="XamaFilm.Views.Templates.MovieItemTemplate"
+    x:Class="XamaFilm.Views.Templates.SerieItemTemplate"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -35,10 +35,15 @@
             FontSize="Medium"
             LineBreakMode="WordWrap"
             Text="{Binding Title}" />
-        <Label
-            Grid.Row="2"
-            Grid.Column="1"
-            Text="{Binding Genre}" />
+        <Label Grid.Row="2" Grid.Column="1">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="TotalSeasons" />
+                    <Span Text=":" />
+                    <Span Text="{Binding TotalSeasons}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
         <Label
             Grid.RowSpan="3"
             Grid.Column="2"
@@ -46,6 +51,5 @@
             Text="{Binding ImdbRating}"
             TextColor="{Binding ImdbRating, Converter={StaticResource RatingToColorConverter}}"
             VerticalTextAlignment="Center" />
-              
     </Grid>
 </ContentView>
