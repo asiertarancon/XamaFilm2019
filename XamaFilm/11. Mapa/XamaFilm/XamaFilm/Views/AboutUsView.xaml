@@ -12,6 +12,7 @@
                 VerticalOptions="CenterAndExpand" />
 
             <maps:Map
+                x:Name="mapa"
                 ItemsSource="{Binding Company.Delegations}"
                 MapType="Street"
                 VerticalOptions="FillAndExpand">
