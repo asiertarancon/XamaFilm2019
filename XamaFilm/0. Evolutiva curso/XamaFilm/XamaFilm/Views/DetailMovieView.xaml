@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamaFilm.Views.DetailMovieView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <FlexLayout
+        AlignContent="SpaceEvenly"
+        AlignItems="Center"
+        Direction="Column">
+        <Image x:Name="Image" Source="{Binding Movie.Poster}" />
+        <Label
+            x:Name="TitleLabel"
+            FontSize="Large"
+            HorizontalTextAlignment="Center"
+            Text="{Binding Movie.Title}" />
+        <Label x:Name="ReleasedLabel" Text="{Binding Movie.Released}" />
+        <Label x:Name="RuntimeLabel" Text="{Binding Movie.Runtime}" />
+        <Label x:Name="GenreLabel" Text="{Binding Movie.Genre}" />
+        <Label x:Name="DirectorLabel" Text="{Binding Movie.Director}" />
+        <Label
+            x:Name="ActorsLabel"
+            LineBreakMode="WordWrap"
+            Text="{Binding Movie.Actors}" />
+        <Label
+            x:Name="AwardsLabel"
+            LineBreakMode="WordWrap"
+            Text="{Binding Movie.Awards}" />
+        <Label
+            x:Name="PlotLabel"
+            LineBreakMode="WordWrap"
+            Text="{Binding Movie.Plot}" />
+
+        <StackLayout BindableLayout.ItemsSource="{Binding Movie.Ratings}" Orientation="Horizontal">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{Binding Source}" />
+                        <Label Text="{Binding Value}" />
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+    </FlexLayout>
+</ContentPage>
