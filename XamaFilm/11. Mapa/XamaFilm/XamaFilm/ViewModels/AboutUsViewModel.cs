@@ -10,7 +10,7 @@ namespace XamaFilm.ViewModels
 {
 	public class AboutUsViewModel : ViewModelBase
 	{
-		private AboutUsViewModel()
+		public AboutUsViewModel()
 		{
 			Company = new MyCompany()
 			{
