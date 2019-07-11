@@ -2,13 +2,25 @@
 <ContentPage
     x:Class="XamaFilm.Views.AboutUsView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
     <ContentPage.Content>
         <StackLayout>
             <Label
                 HorizontalOptions="CenterAndExpand"
                 Text="Curso Introducción Xamarin Forms en Think TIC!"
                 VerticalOptions="CenterAndExpand" />
+
+            <maps:Map ItemsSource="{Binding Company.Delegations}" MapType="Street">
+                <maps:Map.ItemTemplate>
+                    <DataTemplate>
+                        <maps:Pin
+                            Address="{Binding City}"
+                            Label="{Binding Name}"
+                            Position="{Binding Position}" />
+                    </DataTemplate>
+                </maps:Map.ItemTemplate>
+            </maps:Map>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

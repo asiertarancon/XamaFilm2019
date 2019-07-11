@@ -2,7 +2,9 @@
 <ContentPage
     x:Class="XamaFilm.Views.DetailMovieView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:i18n="clr-namespace:XamaFilm.Strings"
+    Visual="Material">
     <FlexLayout
         AlignContent="SpaceEvenly"
         AlignItems="Center"
@@ -10,13 +12,22 @@
         <Image x:Name="Image" Source="{Binding Movie.Poster}" />
         <Label
             x:Name="TitleLabel"
-            FontSize="Large"
-            HorizontalTextAlignment="Center"
+            Style="{StaticResource TitleLabel}"
             Text="{Binding Movie.Title}" />
+
+        <Label Style="{StaticResource CaptionLabel}" Text="{i18n:Translate Released}" />
         <Label x:Name="ReleasedLabel" Text="{Binding Movie.Released}" />
+
+        <Label Style="{StaticResource CaptionLabel}" Text="{i18n:Translate Runtime}" />
         <Label x:Name="RuntimeLabel" Text="{Binding Movie.Runtime}" />
+
+        <Label Style="{StaticResource CaptionLabel}" Text="{i18n:Translate Genre}" />
         <Label x:Name="GenreLabel" Text="{Binding Movie.Genre}" />
+
+        <Label Style="{StaticResource CaptionLabel}" Text="{i18n:Translate Director}" />
         <Label x:Name="DirectorLabel" Text="{Binding Movie.Director}" />
+
+        <Label Style="{StaticResource CaptionLabel}" Text="{i18n:Translate Actors}" />
         <Label
             x:Name="ActorsLabel"
             LineBreakMode="WordWrap"

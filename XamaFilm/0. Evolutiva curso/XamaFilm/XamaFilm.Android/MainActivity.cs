@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms;
+using Xamarin;
 
 namespace XamaFilm.Droid
 {
@@ -20,6 +22,8 @@ namespace XamaFilm.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+			FormsMaps.Init(this, bundle);
+			FormsMaterial.Init(this, bundle);
             LoadApplication(new App());
         }
     }
